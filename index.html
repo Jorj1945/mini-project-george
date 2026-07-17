@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+        }
+        #a1, #a2, #var1, #operator {
+            height: 50px;
+        }
+        #btn {
+            height: 50px;
+            width: 100px;
+        }
+    </style>
+</head>
+<body class="bg-green-500 font-serif">
+    <div class="flex items-center justify-between p-4 text-green-600 bg-white">
+        <div class="kiri">
+            <h1 class="text-3xl">Wellcome to my website</h1>
+        </div>
+        <div class="kanan">
+            <ul class="flex space-x-12">
+                <li><a href="index.html" class="text-green-600 transition-colors duration-300 hover:text-green-800">Kalkulator</a></li>
+                <li><a href="catatan.html" class="text-green-600 transition-colors duration-300 hover:text-green-800">Catatan</a></li>
+                <li><a href="jam.html" class="text-green-600 transition-colors duration-300 hover:text-green-800">Jam Digital</a></li>
+            </ul>
+        </div>
+    </div>
+<center>
+    <br><br>
+    <br>
+    <br><br>
+    <div class="border border-gray-300 rounded-xl p-20 shadow-md max-w-xl bg-white shadow-xl font-serif">
+        <h1 class="text-3xl text-green-600">
+        Kalkulator
+        </h1><br>
+        <input type="number" id="a1" class="text-center w-full border border-gray-300 rounded-full px-2 py-1" placeholder="Masukkan angka pertama"><br>
+        <br>
+        <select name="operator" id="operator" class="appearance-none w-full text-center border border-gray-300 rounded-full px-2 py-1">
+            <option value="" disabled selected>Pilih Operator</option>
+            <option value="*">X</option>
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="/">:</option>
+        </select>
+        <br><br>
+        <input type="number" id="a2" class="text-center w-full border border-gray-300 rounded-full px-2 py-1" placeholder="Masukkan angka kedua"><br>
+        <br>
+        <button class="bg-green-500 text-white px-4 py-2 rounded-full font-serif transition-colors duration-300 hover:bg-white hover:border hover:text-green-500 hover:shadow-lg" type="button" onclick="btn()" id="btn">hasil</button><br><br>
+        <input type="text" id="var1" class="text-center w-full border border-gray-300 rounded-full px-2 py-1" placeholder="Hasil" disabled>
+    </div>
+</center>
+    
+    <!-- javascript -->
+    <script>
+        function btn() {
+            var a1 = parseFloat(document.getElementById("a1").value);
+            var a2 = parseFloat(document.getElementById("a2").value);
+            var operator = document.getElementById("operator").value;
+            var result;
+
+            switch(operator) {
+                case "+":
+                    result = a1 + a2;
+                    break;
+                case "-":
+                    result = a1 - a2;
+                    break;
+                case "*":
+                    result = a1 * a2;
+                    break;
+                case "/":
+                    result = a1 / a2;
+                    break;
+            }
+
+            document.getElementById("var1").value = result;
+        }
+    </script>
+</body>
+</html>
